@@ -1,0 +1,10 @@
+/*
+hack pra solucionar el problema del modelo de caja
+*/
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
