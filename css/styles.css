@@ -175,3 +175,36 @@ Estilizado y alineado de los elementos de la sección principal
         align-items: center;
     }
 }
+
+/*
+Agregando estilos y alineación al footer
+*/
+
+.footer {
+    background-color: #f0ede8;
+    bottom: 0;
+}
+
+.logo-contacto {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+.bg-redes {
+    display: flex;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.information {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    justify-items: center;
+    align-items: center;
+
+    column-gap: 2rem;
+
+}
+
