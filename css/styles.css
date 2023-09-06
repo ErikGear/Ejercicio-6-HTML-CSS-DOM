@@ -37,16 +37,19 @@ body {
 Estilos generales
 */
 h1 {
+    text-align: center;
     font-family: var(--fuentePrincipal);
     font-size: 4.5rem;
 }
 
 h2 {
+    text-align: center;
     font-family: var(--fuenteSecundaria);
     font-size: 3.5rem;
 }
 
 h3 {
+    text-align: center;
     font-family: var(--fuenteSecundaria);
     font-size: 2.5rem;
 }
