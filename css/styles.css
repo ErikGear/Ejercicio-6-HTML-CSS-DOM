@@ -62,3 +62,21 @@ ul li {
 a {
     text-decoration: none;
 }
+
+/*Alineando elementos del HEADER*/
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-superior__elementos {
+    display: flex;
+    justify-content: center;
+    column-gap: 4rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+}
