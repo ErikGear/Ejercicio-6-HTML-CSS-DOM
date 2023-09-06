@@ -99,6 +99,7 @@ Alienado y estilizado del elemento HERO
     position: relative;
     background-image: url(../assets/images/perfumes.jpg);
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     height: 450px;
     position: relative;
