@@ -147,6 +147,11 @@ Alienado y estilizado del elemento HERO
 /*
 Estilizado y alineado de los elementos de la sección principal
 */
+
+.container {
+    max-width: 120rem;
+}
+
 .perfume {
     width: 30rem;
     height: 30rem;
@@ -208,3 +213,22 @@ Agregando estilos y alineación al footer
 
 }
 
+/*Agregando estilos a los menus del HEADER*/
+.menu-inferior__item {
+    color: #000000;
+    padding: 1rem;
+}
+
+.menu-superior__item {
+    color: #000000;
+    padding: 1rem;
+}
+
+.menu-superior__item:hover {
+    border-bottom: 1rem solid #000000;
+    transition: border 3s ease-in-out;
+}
+.menu-inferior__item:hover  {
+    border-bottom: 1rem solid #000000;
+    transition: border 5s ease-in-out;
+}
