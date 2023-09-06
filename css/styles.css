@@ -1,3 +1,9 @@
+
+:root {
+    --fuentePrincipal: 'Lobster', cursive;
+    --fuenteSecundaria: 'Arsenal', sans-serif;
+}
+
 /*
 hack para solucionar el problema del modelo de caja
 */
@@ -21,4 +27,30 @@ body {
     por cada REM:
     */
     font-size: 16px;
+}
+
+/*
+Estilos generales
+*/
+h1 {
+    font-family: var(--fuentePrincipal);
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-family: var(--fuenteSecundaria);
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2.5rem;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
