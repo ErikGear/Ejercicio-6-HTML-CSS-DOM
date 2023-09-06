@@ -181,6 +181,27 @@ Estilizado y alineado de los elementos de la sección principal
     }
 }
 
+/*Agregando estilos a los menus del HEADER*/
+.menu-inferior__item {
+    color: #000000;
+    padding: 1rem;
+}
+
+.menu-superior__item {
+    color: #000000;
+    padding: 1rem;
+}
+
+.menu-superior__item:hover {
+    border-bottom: 0.15rem solid #000000;
+    transition: border 1s ease-in-out;
+}
+.menu-inferior__item:hover  {
+    border-bottom: 0.15rem solid #000000;
+    transition: border 1s ease-in-out;
+}
+
+
 /*
 Agregando estilos y alineación al footer
 */
@@ -213,22 +234,3 @@ Agregando estilos y alineación al footer
 
 }
 
-/*Agregando estilos a los menus del HEADER*/
-.menu-inferior__item {
-    color: #000000;
-    padding: 1rem;
-}
-
-.menu-superior__item {
-    color: #000000;
-    padding: 1rem;
-}
-
-.menu-superior__item:hover {
-    border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
-}
-.menu-inferior__item:hover  {
-    border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
-}
