@@ -234,3 +234,41 @@ Agregando estilos y alineación al footer
 
 }
 
+/*Agregando estilos a los elementos <a></a> del footer*/
+.atencion-footer__item {
+    color: #000000;
+}
+.contacto-footer__item {
+    color: #000000;
+}
+.legales-footer__item {
+    color: #000000;
+}
+
+/*Agregando separación entre elementos*/
+.atencion-footer li{
+    padding-top: 1rem;
+
+}
+.contacto-footer li{
+    padding-top: 1rem;
+
+}
+.legales-footer li{
+    padding-top: 1rem;
+
+}
+
+/*Agregando transición*/
+.atencion-footer__item:hover {
+    border-bottom: 0.15rem solid #000000;
+    transition: border 1s ease-in-out;
+}
+.contacto-footer__item:hover {
+    border-bottom: 0.15rem solid #000000;
+    transition: border 1s ease-in-out;
+}
+.legales-footer__item:hover {
+    border-bottom: 0.15rem solid #000000;
+    transition: border 1s ease-in-out;
+}
