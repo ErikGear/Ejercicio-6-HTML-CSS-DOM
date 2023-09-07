@@ -149,7 +149,7 @@ Estilizado y alineado de los elementos de la sección principal
 */
 
 .container {
-    max-width: 120rem;
+    min-width: 120rem;
 }
 
 .perfume {
