@@ -208,7 +208,7 @@ Agregando estilos y alineación al footer
 
 .footer {
     background-color: #f0ede8;
-    bottom: 0;
+    padding: 2rem;
 }
 
 .logo-contacto {
