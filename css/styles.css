@@ -272,3 +272,42 @@ Agregando estilos y alineación al footer
     border-bottom: 0.15rem solid #000000;
     transition: border 1s ease-in-out;
 }
+
+
+/*
+Definiendo estilos y alineación del apartado de Colaborador
+*/
+.colaborador-opcion {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.colaborador-opcion__bg {
+    margin-bottom: 1rem;
+}
+
+.colaborador-opcion__texto {
+    font-family: var(--fuenteSecundaria);
+    margin-right: 0.5rem;
+}
+.colaborador-opcion__respuesta:hover {
+    cursor: pointer;
+}
+
+/*
+Definiendo estilos y a lienación al formlulario y asus elementos
+*/
+fieldset {
+    border: none;
+
+    background-color: #f5ebe0;
+
+    
+}
+
+input {
+    outline: none;
+    padding: 1rem;
+}
