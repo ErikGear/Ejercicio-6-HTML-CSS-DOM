@@ -24,7 +24,6 @@ let vendedores = [
   {
     nombre: "Juan",
     edad: 26,
-    numeroProductosVendidos: 0,
     tipoProductos: [],
     ids: { dni: "123456", passport: "9876543" },
     activate: function () {
@@ -34,7 +33,6 @@ let vendedores = [
   {
     nombre: "Pedro",
     edad: 24,
-    numeroProductosVendidos: 0,
     tipoProductos: [],
     ids: { dni: "78910", passport: "6789805" },
     activate: function () {
