@@ -55,18 +55,33 @@ let contadorFrescura = 0;
 
 let sumaTotal = 0;
 
-let productosVendidos = [];
+let productosVendidos = [
+  {
+    nombre: "Aqua",
+    cantidadProductovendido: 0
+  },
+  {
+    nombre: "Emoción",
+    cantidadProductovendido: 0
+  },
+  {
+    nombre: "Alegría",
+    cantidadProductovendido: 0
+  },
+  {
+    nombre: "Frescura",
+    cantidadProductovendido: 0
+  }
+];
+
 let tipoProductos = null;
 let cantidadProducto = 0;
 let prod = null;
 
-function ProductoVendido(nombreProducto, cantidadProucto) {
-  this.nombre = nombreProducto;
-  this.cantidad = cantidadProucto;
-}
+
 
 do {
-  
+
   tipoProductos = parseInt(
     prompt(
       "Seleccione el tipo de producto vendido: " +
@@ -78,8 +93,6 @@ do {
     )
   );
 
-  
-
   if (tipoProductos !== 5) {
     cantidadProducto = parseInt(
       prompt(
@@ -90,56 +103,45 @@ do {
     );
   }
 
-  
-
   switch (tipoProductos) {
     case 1:
       contadorAqua += cantidadProducto;
-      prod = new ProductoVendido(
-        productos[tipoProductos - 1].nombre,
-        contadorAqua
-      );
-      productosVendidos.push(prod);
       sumaTotal += contadorAqua * costoAqua;
+      productosVendidos[tipoProductos - 1].cantidadProductovendido = contadorAqua;
       break;
     case 2:
       contadorEmocion += cantidadProducto;
-      prod = new ProductoVendido(
-        productos[tipoProductos - 1].nombre,
-        contadorAqua
-      );
-      productosVendidos.push(prod);
       sumaTotal += contadorEmocion * costoEmocion;
+      productosVendidos[tipoProductos - 1].cantidadProductovendido = contadorEmocion;
       break;
     case 3:
       contadorAlegria += cantidadProducto;
-      prod = new ProductoVendido(
-        productos[tipoProductos - 1].nombre,
-        contadorAqua
-      );
-      productosVendidos.push(prod);
       sumaTotal += contadorAlegria * costoAlegria;
+      productosVendidos[tipoProductos - 1].cantidadProductovendido = contadorAlegria;
       break;
     case 4:
       contadorFrescura += contadorFrescura;
-      prod = new ProductoVendido(
-        productos[tipoProductos - 1].nombre,
-        contadorAqua
-      );
-      productosVendidos.push(prod);
       sumaTotal += contadorFrescura * costoFrescura;
+      productosVendidos[tipoProductos - 1].cantidadProductovendido = contadorFrescura;
       break;
 
     default:
+      vendedores[0].tipoProductos = productosVendidos;
       alert(`¡Vuelva Pronto!`);
       break;
   }
   console.log(tipoProductos);
 } while (tipoProductos !== 5 || tipoProductos <= 0);
 
-console.log(
-  `
+let pd = "";
+
+productosVendidos.forEach(
+  (producto) => {
+    pd += `${producto}\n`;
+  }
+);
+alert(`
 Resumen de ventas del vendedor ${vendedores[0].nombre}` +
-    `\n Los productos vendidos fueron ${productosVendidos}` +
+    `\n Los productos vendidos fueron ${pd}` +
     `\n La suma total de las ventas fue de: ${sumaTotal}`
 );
