@@ -55,19 +55,19 @@ let sumaTotal = 0;
 
 let productosVendidos = [
   {
-    nombre: "Aqua",
+    producto: "Aqua",
     cantidadProductovendido: 0
   },
   {
-    nombre: "Emoción",
+    producto: "Emoción",
     cantidadProductovendido: 0
   },
   {
-    nombre: "Alegría",
+    producto: "Alegría",
     cantidadProductovendido: 0
   },
   {
-    nombre: "Frescura",
+    producto: "Frescura",
     cantidadProductovendido: 0
   }
 ];
@@ -95,7 +95,7 @@ do {
     cantidadProducto = parseInt(
       prompt(
         `Digite la cantidad de productos ${
-          productos[tipoProductos - 1].nombre
+          productos[tipoProductos - 1].producto
         } vendidos`
       )
     );
@@ -135,7 +135,7 @@ let pd = "";
 
 productosVendidos.forEach(
   (producto) => {
-    pd += `${producto.nombre} `;
+    pd += `${producto.producto} `;
     pd += `${producto.cantidadProductovendido}\n`;
   }
 );
