@@ -137,11 +137,12 @@ let pd = "";
 
 productosVendidos.forEach(
   (producto) => {
-    pd += `${producto}\n`;
+    pd += `${producto.nombre} `;
+    pd += `${producto.cantidadProductovendido}\n`;
   }
 );
 alert(`
 Resumen de ventas del vendedor ${vendedores[0].nombre}` +
-    `\n Los productos vendidos fueron ${pd}` +
+    `\n Los productos vendidos fueron: \n${pd}` +
     `\n La suma total de las ventas fue de: ${sumaTotal}`
 );
