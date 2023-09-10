@@ -303,7 +303,7 @@ Definiendo estilos y a lienación al formlulario y asus elementos
 .form {
     background-color:#f5ebe0;
 
-    width: 35%;
+    width: 30%;
 
     padding: 2rem;
     margin: 2rem auto;
@@ -328,7 +328,7 @@ label {
     font-family: var(--fuenteParrafos);
 }
 
-input {
+.form_input {
     outline: none;
     padding: 1rem;
 
@@ -339,7 +339,7 @@ input {
 }
 
 .form__campo {
-    width: 100%;
+    width: 90%;
     margin-bottom: 2rem;
 }
 
@@ -359,3 +359,5 @@ input {
     background-color: #d6ccc2;
     transition: background 0.2s ease-in-out;
 }
+
+/*Ajustando estilos a los radio buttons*/
