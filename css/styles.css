@@ -303,7 +303,9 @@ Definiendo estilos y a lienación al formlulario y asus elementos
 .form {
     background-color:#f5ebe0;
     padding: 2rem;
-    margin: 1rem auto;
+    margin: 2rem auto;
+
+    border-radius: 1rem;
 }
 
 fieldset {
@@ -319,6 +321,7 @@ legend {
 }
 
 label {
+    display: block;
     font-family: var(--fuenteParrafos);
 }
 
