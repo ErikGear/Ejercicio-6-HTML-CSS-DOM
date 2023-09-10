@@ -299,15 +299,42 @@ Definiendo estilos y alineación del apartado de Colaborador
 /*
 Definiendo estilos y a lienación al formlulario y asus elementos
 */
+
+.form {
+    background-color:#f5ebe0;
+    padding: 2rem;
+    margin: 1rem auto;
+}
+
 fieldset {
-    border: none;
+    border: none; 
+    font-family: var(--fuenteSecundaria);   
+}
 
-    background-color: #f5ebe0;
-
-    
+label {
+    font-family: var(--fuenteParrafos);
 }
 
 input {
     outline: none;
     padding: 1rem;
+
+    font-family: var(--fuenteParrafos);
+}
+
+.boton {
+  padding: 1rem 2rem;
+  background-color: #d5bdaf;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.boton:hover {
+    background-color: #9d8189; 
+    transition: background 0.5s ease-in-out;
+}
+.boton:active {
+    background-color: #d6ccc2;
+    transition: background 0.2s ease-in-out;
 }
