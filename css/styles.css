@@ -308,7 +308,14 @@ Definiendo estilos y a lienación al formlulario y asus elementos
 
 fieldset {
     border: none; 
-    font-family: var(--fuenteSecundaria);   
+}
+
+legend {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem;
 }
 
 label {
