@@ -302,6 +302,9 @@ Definiendo estilos y a lienación al formlulario y asus elementos
 }
 .form {
     background-color:#f5ebe0;
+
+    width: 35%;
+
     padding: 2rem;
     margin: 2rem auto;
 
