@@ -361,3 +361,11 @@ label {
 }
 
 /*Ajustando estilos a los radio buttons*/
+
+.colaborador-opcion__respuesta {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-color: #1d3557;
+    border-radius: 50%;
+}
