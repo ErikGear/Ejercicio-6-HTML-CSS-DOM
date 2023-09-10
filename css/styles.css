@@ -194,11 +194,11 @@ Estilizado y alineado de los elementos de la sección principal
 
 .menu-superior__item:hover {
     border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
+    transition: border 0.5s ease-in-out;
 }
 .menu-inferior__item:hover  {
     border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
+    transition: border 0.5s ease-in-out;
 }
 
 
@@ -262,29 +262,24 @@ Agregando estilos y alineación al footer
 /*Agregando transición*/
 .atencion-footer__item:hover {
     border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
+    transition: border 0.5s ease-in-out;
 }
 .contacto-footer__item:hover {
     border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
+    transition: border 0.5s ease-in-out;
 }
 .legales-footer__item:hover {
     border-bottom: 0.15rem solid #000000;
-    transition: border 1s ease-in-out;
+    transition: border 0.5s ease-in-out;
 }
 
 
 /*
 Definiendo estilos y alineación del apartado de Colaborador
 */
-.colaborador-opcion {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-}
-
 .colaborador-opcion__bg {
+    display: flex;
+    justify-content: center;
     margin-bottom: 1rem;
 }
 
@@ -299,7 +294,12 @@ Definiendo estilos y alineación del apartado de Colaborador
 /*
 Definiendo estilos y a lienación al formlulario y asus elementos
 */
+.contenedor-campos {
+    display: flex;
+    flex-direction: column;
 
+    align-items: center;
+}
 .form {
     background-color:#f5ebe0;
     padding: 2rem;
@@ -330,6 +330,10 @@ input {
     padding: 1rem;
 
     font-family: var(--fuenteParrafos);
+}
+
+.form__campo {
+    margin-bottom: 2rem;
 }
 
 .boton {
