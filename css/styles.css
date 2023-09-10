@@ -332,10 +332,14 @@ input {
     outline: none;
     padding: 1rem;
 
+    width: 100%;
+
     font-family: var(--fuenteParrafos);
+    border: none;
 }
 
 .form__campo {
+    width: 100%;
     margin-bottom: 2rem;
 }
 
