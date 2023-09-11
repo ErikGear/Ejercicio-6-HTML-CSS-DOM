@@ -48,8 +48,8 @@ const form = document.getElementById("form");
 form.style.display = "none";
 
 //definiendo varibles para el formulario
-const login = document.getElementById("login");
-const logout = document.getElementById("logOut");
+const iniciar = document.getElementById("iniciar");
+const cerrar = document.getElementById("cerrar");
 
 let usuarioLog = null;
 const warning = document.getElementById("warning");
@@ -59,7 +59,6 @@ warning.style.display = "none";
 const datosVendedor = document.getElementById("datos-vendedor");
 datosVendedor.style.display = "none";
 const msBienvenido = document.getElementById("user-log");
-msBienvenido.style.display = "none";
 
 //datos a asignar en la tabla
 const cantidadAqua = document.getElementById("cantidad-aqua");
@@ -92,53 +91,6 @@ const numberAqua = document.getElementById("aqua");
 const numberEmocion = document.getElementById("emocion");
 const numberAlegria = document.getElementById("alegria");
 const numberFrescura = document.getElementById("frescura");
-//Agregando función  para validar la opción que eligio el  usuario
-function siEsTrabajador() {
-  opciones.style.display = "none";
-  colaborador.style.display = "none";
-  form.style.display = "block";
-}
-function noEstrabajador() {
-  opciones.style.display = "none";
-}
-
-
-
-//Agregando función de validación, para las credenciales
-//digitadas por el usuario
-function logIn() {
-  const user = document.getElementById("usuario").value;
-  const pwd = document.getElementById("password").value;
-  const usuario = vendedores.find(
-    (usuario) => usuario.nombre === user && usuario.password === pwd
-  );
-
-  if (usuario) {
-    usuarioLog = usuario;
-    form.style.display = "none";
-    opciones.style.display = "none";
-    msBienvenido.textContent = `${usuarioLog.nombre}`;
-    msBienvenido.style.display = "block";
-    productosCantidad.style.display = "block";
-    warning.style.display = "none";
-  } else {
-    warning.style.display = "block";
-    warning.style.fontFamily = "Lobster, cursive";
-    warning.style.color = "#9a031e";
-    warning.textContent = "Usuario y/o contraseña incorrectos";
-  }
-  
-}
-
-
-
-function logOut() {
-  form.style.display = "none";
-  msBienvenido.textContent = "";
-  msBienvenido.style.display = "none";
-  productosCantidad.style.display = "none";
-  datosVendedor.style.display = "none";
-}
 
 const costoAqua = 200;
 const costoEmocion = 180;
@@ -156,6 +108,86 @@ let AlegriaTotales = 0;
 let FrescuraTotales = 0;
 
 let sumaTotal = 0;
+
+
+//Agregando función  para validar la opción que eligio el  usuario
+function siEsTrabajador() {
+  opciones.style.display = "none";
+  colaborador.style.display = "none";
+  form.style.display = "block";
+}
+function noEstrabajador() {
+  opciones.style.display = "none";
+}
+
+//Agregando función de validación, para las credenciales
+//digitadas por el usuario
+function logIn() {
+  const user = document.getElementById("usuario").value;
+  const pwd = document.getElementById("password").value;
+  const usuario = vendedores.find(
+    (usuario) => usuario.nombre === user && usuario.password === pwd
+  );
+
+  if (usuario) {
+    usuarioLog = usuario;
+    opciones.style.display = "none";
+    form.style.display = "none";
+    msBienvenido.textContent = `${usuarioLog.nombre}`;
+    productosCantidad.style.display = "block";
+    warning.style.display = "none";
+  } else {
+    warning.style.display = "block";
+    warning.style.fontFamily = "Lobster, cursive";
+    warning.style.color = "#9a031e";
+    warning.textContent = "Usuario y/o contraseña incorrectos";
+  }
+  
+}
+
+//obteniedo totales por producto
+function cantidadProducto() {
+  contadorAqua = parseInt(numberAqua.value);
+  contadorEmocion = parseInt(numberEmocion.value);
+  contadorAlegria = parseInt(numberAlegria.value);
+  contadorFrescura = parseInt(numberFrescura.value);
+
+  AquaTotales = contadorAqua * costoAqua;
+  sumaTotal += AquaTotales;
+  EmocionTotales = contadorEmocion * costoEmocion;
+  sumaTotal += EmocionTotales;
+  AlegriaTotales = contadorAlegria * costoAlegria;
+  sumaTotal += AlegriaTotales;
+  FrescuraTotales = contadorFrescura * costoFrescura;
+  sumaTotal += FrescuraTotales;
+
+  //estableciendo valores
+  cantidadAqua.textContent = contadorAqua;
+  totalAqua.textContent = AquaTotales;
+  cantidadEmocion.textContent = contadorEmocion;
+  totalEmocion.textContent = EmocionTotales;
+  cantidadAlegria.textContent = contadorAlegria;
+  totalAlegria.textContent = AlegriaTotales;
+  cantidadFrescura.textContent = contadorFrescura;
+  totalFrecura.textContent = FrescuraTotales;
+
+  //total de ventas
+  totalVentas.textContent = sumaTotal;
+  productosCantidad.style.display = "none";
+  datosVendedor.style.display = "block";
+}
+
+
+
+
+function logOut() {
+  form.style.display = "none";
+  msBienvenido.textContent = "";
+  productosCantidad.style.display = "none";
+  datosVendedor.style.display = "none";
+}
+
+
 
 /*
 let productosVendidos = [
@@ -250,44 +282,13 @@ productosVendidos.forEach((producto) => {
 });
 */
 
-//obteniedo totales por producto
-function cantidadProducto() {
-  contadorAqua = parseInt(numberAqua.value);
-  contadorEmocion = parseInt(numberEmocion.value);
-  contadorAlegria = parseInt(numberAlegria.value);
-  contadorFrescura = parseInt(numberFrescura.value);
-
-  AquaTotales = contadorAqua * costoAqua;
-  sumaTotal += AquaTotales;
-  EmocionTotales = contadorEmocion * costoEmocion;
-  sumaTotal += EmocionTotales;
-  AlegriaTotales = contadorAlegria * costoAlegria;
-  sumaTotal += AlegriaTotales;
-  FrescuraTotales = contadorFrescura * costoFrescura;
-  sumaTotal += FrescuraTotales;
-
-  //estableciendo valores
-  cantidadAqua.textContent = contadorAqua;
-  totalAqua.textContent = AquaTotales;
-  cantidadEmocion.textContent = contadorEmocion;
-  totalEmocion.textContent = EmocionTotales;
-  cantidadAlegria.textContent = contadorAlegria;
-  totalAlegria.textContent = AlegriaTotales;
-  cantidadFrescura.textContent = contadorFrescura;
-  totalFrecura.textContent = FrescuraTotales;
-
-  //total de ventas
-  totalVentas.textContent = sumaTotal;
-  productosCantidad.style.display = "none";
-  datosVendedor.style.display = "block";
-}
 
 si.addEventListener("click", siEsTrabajador);
 no.addEventListener("click", noEstrabajador);
 
-login.addEventListener("click", logIn);
+iniciar.addEventListener("click", logIn);
 enviar.addEventListener("click", cantidadProducto);
-logout.addEventListener("click", logOut);
+cerrar.addEventListener("click", logOut);
 
 /*
 alert(
