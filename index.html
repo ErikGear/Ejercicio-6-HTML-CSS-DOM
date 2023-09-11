@@ -24,7 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=Arsenal&family=Krub:wght@700&family=Lobster&family=Oleo+Script:wght@700&family=Outfit:wght@900&family=Overpass:wght@200;300&family=Staatliches&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- <script defer src="./main.js"></script> -->
+    <script defer src="./main.js"></script>
 </head>
 
 <body>
@@ -123,7 +123,7 @@
                             <input id="password" class="form_input" type="password" required="true">
                         </div>
                         <div class="form__boton">
-                            <button id="login" class="boton" onclick="login">Iniciar Sesión</button>
+                            <button id="login" class="boton" >Iniciar Sesión</button>
                         </div>
 
                         <p id="warning"></p>
@@ -132,8 +132,37 @@
                 </fieldset>
             </form>
 
-            <section id="datos-vendedor">
+            <section id="seccion-productos">
                 <h2>¡Bienvenido <span id="user-log"></span>!</h2>
+                <h3>Ingrese la cantidad vendida de cada producto</h3>
+                <div class="seccion-productos__bg">
+                    <div class="contenedor-producto">
+                        <label class="seccion-productos__text" for="aqua">Aqua</label>
+                        <input id="aqua" class="seccion-productos__cantidad" type="number" required="true">
+                    </div>
+
+                    <div class="contenedor-producto">
+                        <label class="seccion-productos__text" for="emocion">Emoción</label>
+                        <input id="emocion" class="seccion-productos__cantidad" type="number" required="true">
+                    </div>
+
+                    <div class="contenedor-producto">
+                        <label class="seccion-productos__text" for="alegria">Alegría</label>
+                        <input id="alegria" class="seccion-productos__cantidad" type="number" required="true">
+                    </div>
+
+                    <div class="contenedor-producto">
+                        <label class="seccion-productos__text" for="frescura">Frescura</label>
+                        <input id="frescura" class="seccion-productos__cantidad" type="number" required="true">
+                    </div>
+
+                    <div class="seccion-productos__boton">
+                        <button id="enviar" class="boton enviar" >Enviar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="datos-vendedor">
                 <div class="contenedor-datos">
                     <table class="tabla">
                         <caption class="tabla__titulo">Resumen de Ventas</caption>
@@ -169,7 +198,7 @@
                         <p>El total de venta corresponde a: <span id="total-ventas"></span></p>
                     </div>
                     <div class="">
-                        <button id="login" class="boton" onclick="login">Cerrar Sesión</button>
+                        <button id="logOut" class="boton" onclick="login">Cerrar Sesión</button>
                     </div>
                 </div>
             </section>
