@@ -369,3 +369,29 @@ label {
     background-color: #1d3557;
     border-radius: 50%;
 }
+
+/*Asignanod estilos a la sección de datos del vendedor*/
+.contenedor-datos {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    align-content: space-evenly;
+
+    width: 35%;
+
+
+    gap: 1rem;
+    padding: 2rem;
+    margin: 2rem auto;
+
+    border-radius: 0.5rem;
+
+    background-color: #e0e1dd;
+
+}
+
+.tabla {
+    font-family: var(--fuenteParrafos);
+    text-align: center;
+}
