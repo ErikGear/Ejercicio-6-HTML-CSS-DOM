@@ -26,21 +26,13 @@ let vendedores = [
     nombre: "Juan",
     edad: 26,
     tipoProductos: [],
-    ids: { dni: "123456", passport: "9876543" },
-    activate: function () {
-      this.activo = true;
-    },
-    password: "I/wV2*z<4~4£"
+    password: "1234"
   },
   {
     nombre: "Pedro",
     edad: 24,
     tipoProductos: [],
-    ids: { dni: "78910", passport: "6789805" },
-    activate: function () {
-      this.activo = true;
-    },
-    password: "52Eidy>A9</@"
+    password: "5678"
   }
 ];
 
@@ -56,8 +48,9 @@ const form = document.getElementById("form");
 form.style.display = "none";
 
 //definiendo varibles para el formulario
-const usuario = document.getElementById("usuario");
-const password = document.getElementById("password");
+const login = document.getElementById("login");
+const logout = document.getElementById("logOut");
+
 let usuarioLog = null;
 const warning = document.getElementById("warning");
 warning.style.display = "none";
@@ -66,6 +59,7 @@ warning.style.display = "none";
 const datosVendedor = document.getElementById("datos-vendedor");
 datosVendedor.style.display = "none";
 const msBienvenido = document.getElementById("user-log");
+msBienvenido.style.display = "none";
 
 //datos a asignar en la tabla
 const cantidadAqua = document.getElementById("cantidad-aqua");
@@ -86,6 +80,18 @@ const colaborador = document.getElementById("colaborador-title");
 //total de ventas
 const totalVentas = document.getElementById("total-ventas");
 
+//boton enviar
+const enviar = document.getElementById("enviar");
+
+//seccion cantidad prodcutos
+const productosCantidad = document.getElementById("seccion-productos");
+productosCantidad.style.display = "none";
+
+//definiendo variables para los campos de cantidad por producto
+const numberAqua = document.getElementById("aqua");
+const numberEmocion = document.getElementById("emocion");
+const numberAlegria = document.getElementById("alegria");
+const numberFrescura = document.getElementById("frescura");
 //Agregando función  para validar la opción que eligio el  usuario
 function siEsTrabajador() {
   opciones.style.display = "none";
@@ -96,22 +102,24 @@ function noEstrabajador() {
   opciones.style.display = "none";
 }
 
-si.addEventListener("click", siEsTrabajador);
-no.addEventListener("click", noEstrabajador);
+
 
 //Agregando función de validación, para las credenciales
 //digitadas por el usuario
-function login() {
+function logIn() {
+  const user = document.getElementById("usuario").value;
+  const pwd = document.getElementById("password").value;
   const usuario = vendedores.find(
-    (usuario) =>
-      usuario.nombre === usuario.value && usuario.password === password.value
+    (usuario) => usuario.nombre === user && usuario.password === pwd
   );
 
   if (usuario) {
     usuarioLog = usuario;
     form.style.display = "none";
+    opciones.style.display = "none";
     msBienvenido.textContent = `${usuarioLog.nombre}`;
-    datosVendedor.style.display = "block";
+    msBienvenido.style.display = "block";
+    productosCantidad.style.display = "block";
     warning.style.display = "none";
   } else {
     warning.style.display = "block";
@@ -119,12 +127,16 @@ function login() {
     warning.style.color = "#9a031e";
     warning.textContent = "Usuario y/o contraseña incorrectos";
   }
+  
 }
+
+
 
 function logOut() {
   form.style.display = "none";
   msBienvenido.textContent = "";
   msBienvenido.style.display = "none";
+  productosCantidad.style.display = "none";
   datosVendedor.style.display = "none";
 }
 
@@ -145,6 +157,7 @@ let FrescuraTotales = 0;
 
 let sumaTotal = 0;
 
+/*
 let productosVendidos = [
   {
     producto: "Aqua",
@@ -163,7 +176,9 @@ let productosVendidos = [
     cantidadProductovendido: 0
   }
 ];
+*/
 
+/*
 let tipoProductos = null;
 let cantidadProducto = 0;
 let prod = null;
@@ -233,23 +248,51 @@ productosVendidos.forEach((producto) => {
   pd += `${producto.producto} `;
   pd += `${producto.cantidadProductovendido}\n`;
 });
+*/
 
-//estableciendo valores
-cantidadAqua.textContent = contadorAqua;
-totalAqua.textContent = AquaTotales;
-cantidadEmocion.textContent = contadorEmocion;
-totalEmocion.textContent = EmocionTotales;
-cantidadAlegria.textContent = contadorAlegria;
-totalAlegria.textContent = AlegriaTotales;
-cantidadFrescura.textContent = contadorFrescura;
-totalFrecura.textContent = FrescuraTotales;
+//obteniedo totales por producto
+function cantidadProducto() {
+  contadorAqua = parseInt(numberAqua.value);
+  contadorEmocion = parseInt(numberEmocion.value);
+  contadorAlegria = parseInt(numberAlegria.value);
+  contadorFrescura = parseInt(numberFrescura.value);
 
-//total de ventas
-totalVentas.textContent = sumaTotal;
+  AquaTotales = contadorAqua * costoAqua;
+  sumaTotal += AquaTotales;
+  EmocionTotales = contadorEmocion * costoEmocion;
+  sumaTotal += EmocionTotales;
+  AlegriaTotales = contadorAlegria * costoAlegria;
+  sumaTotal += AlegriaTotales;
+  FrescuraTotales = contadorFrescura * costoFrescura;
+  sumaTotal += FrescuraTotales;
 
+  //estableciendo valores
+  cantidadAqua.textContent = contadorAqua;
+  totalAqua.textContent = AquaTotales;
+  cantidadEmocion.textContent = contadorEmocion;
+  totalEmocion.textContent = EmocionTotales;
+  cantidadAlegria.textContent = contadorAlegria;
+  totalAlegria.textContent = AlegriaTotales;
+  cantidadFrescura.textContent = contadorFrescura;
+  totalFrecura.textContent = FrescuraTotales;
+
+  //total de ventas
+  totalVentas.textContent = sumaTotal;
+  productosCantidad.style.display = "none";
+  datosVendedor.style.display = "block";
+}
+
+si.addEventListener("click", siEsTrabajador);
+no.addEventListener("click", noEstrabajador);
+
+login.addEventListener("click", logIn);
+enviar.addEventListener("click", cantidadProducto);
+logout.addEventListener("click", logOut);
+
+/*
 alert(
   `
 Resumen de ventas del vendedor ${vendedores[0].nombre}` +
     `\n Los productos vendidos fueron: \n${pd}` +
     `\n La suma total de las ventas fue de: ${sumaTotal}`
-);
+);*/
