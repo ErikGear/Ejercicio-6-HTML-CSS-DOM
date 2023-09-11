@@ -22,3 +22,6 @@ Notas.
 - Debe hacer uso de funciones, arrays y estructuras de control para resolver el ejercicio.
 
 _Realizar el ejercicio por medio de cualquiera de los métodos de salidas en JS **(console, alert o document)**._
+
+Se anexa link del proyecto finalizado:
+[Proyecto: Perfumes Latinos](https://erikgear.github.io/Ejercicio-6-HTML-CSS-DOM/)
