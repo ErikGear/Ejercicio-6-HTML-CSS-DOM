@@ -122,7 +122,8 @@ function noEstrabajador() {
 
 //Agregando función de validación, para las credenciales
 //digitadas por el usuario
-function logIn() {
+function logIn(e) {
+  e.preventDefault()
   const user = document.getElementById("usuario").value;
   const pwd = document.getElementById("password").value;
   const usuario = vendedores.find(
@@ -146,7 +147,8 @@ function logIn() {
 }
 
 //obteniedo totales por producto
-function cantidadProducto() {
+function cantidadProducto(e) {
+  e.preventDefault()
   contadorAqua = parseInt(numberAqua.value);
   contadorEmocion = parseInt(numberEmocion.value);
   contadorAlegria = parseInt(numberAlegria.value);
@@ -180,7 +182,8 @@ function cantidadProducto() {
 
 
 
-function logOut() {
+function logOut(e) {
+  e.preventDefault()
   form.style.display = "none";
   msBienvenido.textContent = "";
   productosCantidad.style.display = "none";
