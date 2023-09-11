@@ -184,7 +184,7 @@ do {
     cantidadProducto = parseInt(
       prompt(
         `Digite la cantidad de productos ${
-          productos[tipoProductos - 1].producto
+          productosVendidos[tipoProductos - 1].producto
         } vendidos`
       )
     );
