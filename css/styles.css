@@ -395,3 +395,9 @@ label {
     font-family: var(--fuenteParrafos);
     text-align: center;
 }
+.tabla__titulo {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
