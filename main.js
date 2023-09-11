@@ -80,12 +80,16 @@ const totalAlegria = document.getElementById("total-alegria");
 const cantidadFrescura = document.getElementById("cantidad-frecura");
 const totalFrecura = document.getElementById("total-frecura");
 
+//Titulo de colaborador
+const colaborador = document.getElementById("colaborador-title");
+
 //total de ventas
 const totalVentas = document.getElementById("total-ventas");
 
 //Agregando función  para validar la opción que eligio el  usuario
 function siEsTrabajador() {
   opciones.style.display = "none";
+  colaborador.style.display = "none";
   form.style.display = "block";
 }
 function noEstrabajador() {
