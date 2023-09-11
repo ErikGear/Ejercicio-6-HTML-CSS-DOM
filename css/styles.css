@@ -354,6 +354,7 @@ label {
 .boton:hover {
     background-color: #9d8189; 
     transition: background 0.5s ease-in-out;
+    cursor: pointer;
 }
 .boton:active {
     background-color: #d6ccc2;
@@ -401,3 +402,54 @@ label {
     padding: 1rem;
     margin-bottom: 2rem;
 }
+
+/*Alineando los inputs y labels de los productos*/
+.seccion-productos__bg{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    background-color: #9d8189;
+
+    width: 35%;
+    border-radius: 0.5rem;
+
+    padding: 1.5rem;
+    margin: 2rem auto;
+}
+
+.contenedor-producto {
+    margin-bottom: 1.5rem;
+}
+
+/*Etiquetas*/
+.seccion-productos__text {
+   color: #ffffff; 
+}
+
+/*Inputs de cantidad*/
+.seccion-productos__cantidad {
+    outline: none;
+    padding: 1rem;
+
+    width: 100%;
+
+    font-family: var(--fuenteParrafos);
+    border: none;
+    border-radius: 0.2rem;
+}
+
+/*Retirando el spinner del input number*/
+.seccion-productos__cantidad::-webkit-inner-spin-button,
+.seccion-productos__cantidad::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/*Modificando el color del efecto hover en el boton de ENVIAR*/
+div .enviar:hover {
+    background-color: #f5ebe0;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
