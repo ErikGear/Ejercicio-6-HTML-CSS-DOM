@@ -24,7 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=Arsenal&family=Krub:wght@700&family=Lobster&family=Oleo+Script:wght@700&family=Outfit:wght@900&family=Overpass:wght@200;300&family=Staatliches&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- <script defer src="./main.js"></script>-->
+    <script defer src="./main.js"></script>
 </head>
 
 <body>
@@ -94,9 +94,9 @@
         </section>
 
         <section>
-            <h3>Eres colaborador !?</h3>
+            <h3 id="colaborador-title">Eres colaborador !?</h3>
 
-            <div class="contenedor-opcion">
+            <div id="contenedor-opcion" class="contenedor-opcion">
                 <div class="colaborador-opcion__bg">
                     <label class="colaborador-opcion__texto" for="si">Si</label>
                     <input id="si" class="colaborador-opcion__respuesta" type="radio" name="respuesta">
@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            <form class="form">
+            <form class="form" id="form">
                 <fieldset>
                     <legend>Iniciar sesión</legend>
 
@@ -122,12 +122,51 @@
                             <input id="password" class="form_input" type="password" required="true">
                         </div>
                         <div class="form__boton">
-                            <button id="login" class="boton">Iniciar Sesión</button>
+                            <button id="login" class="boton" onclick="login">Iniciar Sesión</button>
                         </div>
+
+                        <p id="warning"></p>
                     </div>
 
                 </fieldset>
             </form>
+
+            <section id="datos-vendedor">
+                <h2>¡Bienvenido <span id="user-log"></span>!</h2>
+                <table>
+                    <caption>Resumen de Ventas</caption>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <th>Aqua</th>
+                        <th id="cantidad-aqua"></th>
+                        <th id="total-aqua"></th>
+                    </tr>
+                    <tr>
+                        <th>Emoción</th>
+                        <th id="cantidad-emocion"></th>
+                        <th id="total-emocion"></th>
+                    </tr>
+                    <tr>
+                        <th>Alegría</th>
+                        <th id="cantidad-alegria"></th>
+                        <th id="total-alegria"></th>
+                    </tr>
+                    <tr>
+                        <th>Frescura</th>
+                        <th id="cantidad-frecura"></th>
+                        <th id="total-frecura"></th>
+                    </tr>
+                   
+                </table>
+                <p>El total de venta corresponde a: <span id="total-ventas"></span></p>
+                <div class="">
+                    <button id="login" class="boton" onclick="login">Cerrar Sesión</button>
+                </div>
+            </section>
 
         </section>
     </main>
